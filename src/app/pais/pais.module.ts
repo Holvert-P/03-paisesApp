@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorPaisComponent } from './pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
-import { VerPaisComponent } from './pages/ver-pais/por-ver-pais.component';
+import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { CapitalTablaComponent } from './components/capital-tabla/capital-tabla.component';
+import { RegionTablaComponent } from './components/region-tabla/region-tabla.component';
 @NgModule({
   declarations: [
     PorCapitalComponent,
@@ -19,6 +20,7 @@ import { CapitalTablaComponent } from './components/capital-tabla/capital-tabla.
     PaisTablaComponent,
     InputSearchComponent,
     CapitalTablaComponent,
+    RegionTablaComponent,
   ],
   exports: [
     PorCapitalComponent,
