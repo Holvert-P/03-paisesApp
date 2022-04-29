@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.small-flag {
+  width: 2rem;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #0d6efd;
+  padding: 0.1em 0.5em;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+a:hover {
+  background-color: #f8d7da;
+}
