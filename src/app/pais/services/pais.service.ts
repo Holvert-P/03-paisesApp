@@ -9,8 +9,11 @@ import { Country } from '../interface/country.interface';
 export class PaisService {
   private apiUrl: string = 'https://restcountries.com/v3.1/';
 
-  buscarPaises(termino: string): Observable<Country[]> {
-    const url = `${this.apiUrl}/name/${termino}`;
+  buscarData(
+    termino: string,
+    endpoint: string = 'name'
+  ): Observable<Country[]> {
+    const url = `${this.apiUrl}/${endpoint}/${termino}`;
     return this.http.get<Country[]>(url);
   }
   constructor(private http: HttpClient) {}

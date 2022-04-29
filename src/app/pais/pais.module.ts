@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
+import { CapitalTablaComponent } from './components/capital-tabla/capital-tabla.component';
 @NgModule({
   declarations: [
     PorCapitalComponent,
@@ -17,6 +18,7 @@ import { InputSearchComponent } from './components/input-search/input-search.com
     VerPaisComponent,
     PaisTablaComponent,
     InputSearchComponent,
+    CapitalTablaComponent,
   ],
   exports: [
     PorCapitalComponent,

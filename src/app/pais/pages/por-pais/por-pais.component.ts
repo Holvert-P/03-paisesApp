@@ -15,7 +15,7 @@ export class PorPaisComponent {
   buscar(termino: string) {
     this.error = false;
 
-    this.paisService.buscarPaises(termino).subscribe(
+    this.paisService.buscarData(termino).subscribe(
       (paises) => {
         this.country = paises;
         console.log(paises);
@@ -31,7 +31,7 @@ export class PorPaisComponent {
 
   sugerencias(termino: string) {
     this.termino = termino;
-    this.paisService.buscarPaises(termino).subscribe({
+    this.paisService.buscarData(termino).subscribe({
       next: (paises) => (this.country = paises),
       error: () => {
         this.error = true;
