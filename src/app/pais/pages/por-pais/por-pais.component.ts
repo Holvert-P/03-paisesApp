@@ -12,9 +12,10 @@ export class PorPaisComponent {
   error: boolean = false;
 
   country: Country[] = [];
-  buscar() {
+  buscar(termino: string) {
     this.error = false;
-    this.paisService.buscarPaises(this.termino).subscribe(
+
+    this.paisService.buscarPaises(termino).subscribe(
       (paises) => {
         this.country = paises;
         console.log(paises);
@@ -25,6 +26,19 @@ export class PorPaisComponent {
         this.country = [];
       }
     );
+    console.log(this.termino);
+  }
+
+  sugerencias(termino: string) {
+    this.termino = termino;
+    this.paisService.buscarPaises(termino).subscribe({
+      next: (paises) => (this.country = paises),
+      error: () => {
+        this.error = true;
+        this.country = [];
+      },
+      complete: () => (this.error = false),
+    });
     console.log(this.termino);
   }
 

@@ -2,10 +2,7 @@
 <hr>
 <section class="row">
   <div class="col">
-    <form autocomplete="off" (ngSubmit)="buscar()">
-      <input type="text" name="termino" placeholder="Buscar país..." class="form-control w-auto" [(ngModel)]="termino"
-        autocomplete="off">
-    </form>
+    <app-input-search (onEnter)="buscar($event)" (OnDebounce)="sugerencias($event)"></app-input-search>
   </div>
 </section>
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Country } from '../../pais/interface/country.interface';
+import { Country } from '../../interface/country.interface';
 
 @Component({
   selector: 'app-pais-tabla',

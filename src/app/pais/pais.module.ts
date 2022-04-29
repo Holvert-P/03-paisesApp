@@ -7,7 +7,8 @@ import { VerPaisComponent } from './pages/ver-pais/por-ver-pais.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { PaisTablaComponent } from '../components/pais-tabla/pais-tabla.component';
+import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
+import { InputSearchComponent } from './components/input-search/input-search.component';
 @NgModule({
   declarations: [
     PorCapitalComponent,
@@ -15,6 +16,7 @@ import { PaisTablaComponent } from '../components/pais-tabla/pais-tabla.componen
     PorRegionComponent,
     VerPaisComponent,
     PaisTablaComponent,
+    InputSearchComponent,
   ],
   exports: [
     PorCapitalComponent,
