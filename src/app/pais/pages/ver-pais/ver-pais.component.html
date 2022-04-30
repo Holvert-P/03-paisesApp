@@ -15,7 +15,7 @@
           <h3>Información</h3>
           <ul class="list-group">
             <li class="list-group-item"><b>Población: </b>{{pais.population | number}}</li>
-            <li class="list-group-item"><b>Capital: </b>{{pais.capital}}</li>
+            <li class="list-group-item"><b>Capital: </b>{{pais.capital || "No posee"}}</li>
             <li class="list-group-item"><b>AlphaCode: </b>{{pais.cca2}}</li>
           </ul>
         </div>
@@ -23,28 +23,28 @@
         <div class="row">
           <article class="col">
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['spa'].common}}
+              {{pais.translations['spa']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['jpn'].common}}
+              {{pais.translations['jpn']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['kor'].common}}
+              {{pais.translations['kor']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['rus'].common}}
+              {{pais.translations['rus']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['por'].common}}
+              {{pais.translations['por']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['zho'].common}}
+              {{pais.translations['zho']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['fra'].common}}
+              {{pais.translations['fra']?.common}}
             </span>
             <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-              {{pais.translations['ita'].common}}
+              {{pais.translations['ita']?.common}}
             </span>
           </article>
         </div>
