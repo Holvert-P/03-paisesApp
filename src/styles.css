@@ -1,6 +1,6 @@
 .small-flag {
-  width: 2rem;
-  height: auto;
+  width: 3rem;
+
   display: inline-block;
 }
 
@@ -14,4 +14,48 @@ a {
 }
 a:hover {
   background-color: #f8d7da;
+}
+li {
+  cursor: pointer;
+}
+
+input:focus,
+select:focus,
+select,
+input.form-control:focus,
+button.btn:focus {
+  outline: none;
+
+  box-shadow: none;
+
+  -moz-box-shadow: none;
+
+  -webkit-box-shadow: none;
+}
+
+ul.list-sug {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 15rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+input.input-search {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  max-width: 15rem;
+  min-width: 15rem;
+  padding: 0.5rem;
+}
+input.input-search:focus {
+  border: 1px solid #09f;
 }

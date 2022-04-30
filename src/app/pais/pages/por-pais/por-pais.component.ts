@@ -10,36 +10,44 @@ import { Country } from '../../interface/country.interface';
 export class PorPaisComponent {
   termino: string = '';
   error: boolean = false;
-
+  paisesSugeridos: Country[] = [];
   country: Country[] = [];
+
+  search(termino: string) {
+    console.log(termino);
+  }
   buscar(termino: string) {
     this.error = false;
 
-    this.paisService.buscarData(termino).subscribe(
-      (paises) => {
-        this.country = paises;
-        console.log(paises);
-      },
-      (err) => {
-        console.log(err);
-        this.error = true;
-        this.country = [];
-      }
-    );
-    console.log(this.termino);
-  }
-
-  sugerencias(termino: string) {
-    this.termino = termino;
     this.paisService.buscarData(termino).subscribe({
-      next: (paises) => (this.country = paises),
+      next: (paises) => {
+        this.country = paises;
+        this.paisesSugeridos = [];
+      },
       error: () => {
         this.error = true;
         this.country = [];
       },
       complete: () => (this.error = false),
     });
-    console.log(this.termino);
+    console.log(this.country);
+  }
+
+  sugerencias(termino: string) {
+    console.log(this.paisesSugeridos);
+
+    this.termino = termino;
+    this.paisService.buscarData(termino).subscribe({
+      next: (paises) => {
+        this.paisesSugeridos = paises.splice(0, 5);
+        console.log(this.paisesSugeridos);
+      },
+      error: () => {
+        this.error = true;
+        this.paisesSugeridos = [];
+      },
+      complete: () => (this.error = false),
+    });
   }
 
   constructor(private paisService: PaisService) {}

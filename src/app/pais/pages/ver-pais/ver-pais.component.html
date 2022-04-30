@@ -3,54 +3,56 @@
 </div>
 
 <ng-template #showData>
-  <section class="row">
-    <div class="col-12 d-flex">
-      <h1>País: <small>{{pais.name.common | uppercase}}</small> </h1>
-      <img src={{pais.flags.svg}} alt="pais.flag" class="small-flag mx-4 ">
-    </div>
+  <section class="animate__animated animate__fadeIn">
     <section class="row">
-
-      <div class="col">
-        <h3>Información</h3>
-        <ul class="list-group">
-          <li class="list-group-item"><b>Población: </b>{{pais.population | number}}</li>
-          <li class="list-group-item"><b>Capital: </b>{{pais.capital}}</li>
-          <li class="list-group-item"><b>AlphaCode: </b>{{pais.cca2}}</li>
-        </ul>
+      <div class="col-12 d-flex">
+        <h1>País: <small>{{pais.name.common | uppercase}}</small> </h1>
+        <img src={{pais.flags.svg}} alt="pais.flag" class="small-flag mx-2 py-2">
       </div>
-      <h4>Lenguajes</h4>
-      <div class="row">
-        <article class="col">
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['spa'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['jpn'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['kor'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['rus'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['por'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['zho'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['fra'].common}}
-          </span>
-          <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
-            {{pais.translations['ita'].common}}
-          </span>
-        </article>
-      </div>
+      <section class="row">
 
+        <div class="col">
+          <h3>Información</h3>
+          <ul class="list-group">
+            <li class="list-group-item"><b>Población: </b>{{pais.population | number}}</li>
+            <li class="list-group-item"><b>Capital: </b>{{pais.capital}}</li>
+            <li class="list-group-item"><b>AlphaCode: </b>{{pais.cca2}}</li>
+          </ul>
+        </div>
+        <h4>Lenguajes</h4>
+        <div class="row">
+          <article class="col">
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['spa'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['jpn'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['kor'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['rus'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['por'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['zho'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['fra'].common}}
+            </span>
+            <span class="bagde bg-primary mx-2  text-white text-center  rounded d-inline-block m-2 px-4">
+              {{pais.translations['ita'].common}}
+            </span>
+          </article>
+        </div>
+
+      </section>
     </section>
-  </section>
-  <section class="row">
-    <pre>{{pais | json}}</pre>
+    <section class="row">
+      <pre>{{pais | json}}</pre>
+    </section>
   </section>
 </ng-template>

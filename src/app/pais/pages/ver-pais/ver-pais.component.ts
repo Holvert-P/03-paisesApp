@@ -26,14 +26,6 @@ export class VerPaisComponent implements OnInit {
         tap(console.log)
       )
       .subscribe((pais) => (this.pais = pais[0]));
-
-    // peticion larga
-    // this.activatedRoute.params.subscribe(({ id }) => {
-    //   this.paisService.buscarData(id, 'alpha').subscribe((pais) => {
-    //     // this.pais = pais;
-    //     console.log(pais);
-    //   });
-    // });
   }
 
   constructor(

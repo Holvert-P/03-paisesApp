@@ -10,12 +10,13 @@ import { PaisService } from '../../services/pais.service';
 export class PorRegionComponent implements OnInit {
   termino: string = '';
   error: boolean = false;
-
+  regions: Array<string> = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  regionActive: string = '';
   country: Country[] = [];
   buscar(termino: string) {
     this.error = false;
-
-    this.paisService.buscarData(termino).subscribe(
+    this.regionActive = termino;
+    this.paisService.buscarData(termino, 'region').subscribe(
       (paises) => {
         this.country = paises;
         console.log(paises);
@@ -29,18 +30,23 @@ export class PorRegionComponent implements OnInit {
     console.log(this.termino);
   }
 
-  sugerencias(termino: string) {
-    this.termino = termino;
-    this.paisService.buscarData(termino).subscribe({
-      next: (paises) => (this.country = paises),
-      error: () => {
-        this.error = true;
-        this.country = [];
-      },
-      complete: () => (this.error = false),
-    });
-    console.log(this.termino);
+  getClass(region: string) {
+    return `btn  text-white rounded-0 mb-4 ${
+      region === this.regionActive ? 'bg-primary' : 'bg-secondary'
+    }`;
   }
+  // sugerencias(termino: string) {
+  //   this.termino = termino;
+  //   this.paisService.buscarData(termino, 'region').subscribe({
+  //     next: (paises) => (this.country = paises),
+  //     error: () => {
+  //       this.error = true;
+  //       this.country = [];
+  //     },
+  //     complete: () => (this.error = false),
+  //   });
+  //   console.log(this.termino);
+  // }
 
   constructor(private paisService: PaisService) {}
 

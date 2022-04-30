@@ -1,17 +1,21 @@
-<h2>Por País</h2>
-<hr>
-<section class="row">
-  <div class="col">
-    <app-input-search (onEnter)="buscar($event)" (OnDebounce)="sugerencias($event)"></app-input-search>
-  </div>
-</section>
+<section class="animate__animated animate__fadeIn">
+  <h2>Por Región</h2>
+  <hr>
+  <section class="row">
+    <div class="col text-center btn-group flex-wrap ">
+      <button [class]="getClass(region)" *ngFor="let region of regions" (click)="buscar(region)" type="button">{{region
+        |
+        uppercase}}</button>
+    </div>
+  </section>
 
-<div class="alert alert-danger mt-4" *ngIf="error">
-  Sin resultados para el termino: "<strong>{{termino}}</strong>"
-</div>
-
-<section class="row" *ngIf="country.length > 0">
-  <div class="col">
-    <app-pais-tabla [country]="country"></app-pais-tabla>
+  <div class="alert alert-danger mt-4" *ngIf="error">
+    Sin resultados para el termino: "<strong>{{termino}}</strong>"
   </div>
+
+  <section class="row " *ngIf="country.length > 0">
+    <div class="col table-responsive-sm">
+      <app-region-tabla [country]="country"></app-region-tabla>
+    </div>
+  </section>
 </section>
